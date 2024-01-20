@@ -1,2 +1,2 @@
 # rubyforfun
-Learning Ruby language from a "Ruby is for Fun" book
+Learning Ruby language from the "Ruby is for Fun" book
