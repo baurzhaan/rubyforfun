@@ -34,8 +34,6 @@ loop do
 
   puts "== There are #{team_a.length - team_a.count(0)} robots in Team A =="
   puts "== There are #{team_b.length - team_b.count(0)} robots in Team B =="
-  puts team_a
-  puts team_b
 
   puts
   if team_a.count(0) == 10 && team_b.count(10) == 10
