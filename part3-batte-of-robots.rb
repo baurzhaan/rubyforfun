@@ -1,3 +1,11 @@
+=begin
+Exercise 1
+  Add more details to stats method so it prints the state of two arrays.
+
+Exercise 2
+  Improve program the following way. Each cell in array must represent the percentage of life of a robot from 1 to 100. Initial value should be 100. Each attack should take random number from robot’s life value. This random number should be from 30 to 100. If life number is zero or less, we should consider this robot destroyed.
+=end
+
 team_a = Array.new(10,1)
 team_b = Array.new(10,1)
 
