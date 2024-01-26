@@ -31,7 +31,9 @@ cart.each do |purchase|
   quantity = purchase[:qty]
   price = inventory[purchase[:type]][:price_per_item]
   total_price_of_all_items += quantity * price
+
+  items_available = inventory[purchase[:type]][:available]
+  puts items_available >= quantity ? "There is enough items available at warehouse." : "Warning! There is (are) only #{items_available} item(s) available at warehouse."
 end
 
 puts "Total price of all items in the cart: #{total_price_of_all_items}"
-
