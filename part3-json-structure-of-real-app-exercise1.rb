@@ -8,7 +8,7 @@
   },
   balance: {
     value: 123.45,
-    currency: :usd
+    currency: '$'
   },
   list_of_transcations: [{
     description: 'McDonalds',
@@ -34,4 +34,19 @@
   show_deposit: true
 }
 
-puts online_bank_account
+print "Show deposit (Y/N): "
+show_depo = gets.chomp.upcase
+
+case show_depo
+when 'Y' then online_bank_account[:show_deposit] = true
+when 'N' then online_bank_account[:show_deposit] = false
+else raise 'You need to enter Y or N.'
+end
+
+puts "Client: #{online_bank_account[:client_name][:firstname]} #{online_bank_account[:client_name][:lastname]}"
+puts "Balance: #{online_bank_account[:balance][:currency]}#{online_bank_account[:balance][:value]}"
+puts 'List of transactions'
+online_bank_account[:list_of_transcations].each do |transaction|
+  next if !online_bank_account[:show_deposit] && transaction[:type] == :deposit
+  puts " |--> #{transaction[:description]}: #{transaction[:type]} $#{transaction[:amount]}"
+end
